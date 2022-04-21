@@ -1,3 +1,4 @@
+//go:build ignore
 // +build ignore
 
 package main
@@ -17,7 +18,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/chromedp/chromedp/kb"
+	"github.com/stuartrucker/chromedp/kb"
 )
 
 var (

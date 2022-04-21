@@ -415,6 +415,12 @@ func NodeReady(s *Selector) {
 	WaitFunc(s.waitReady(nil))(s)
 }
 
+// Make this function accessible
+func CallFunctionOnNode(ctx context.Context, node *cdp.Node, function string, res interface{}, args ...interface{}) error {
+	return callFunctionOnNode(ctx, node, function, res, args...)
+}
+
+
 func callFunctionOnNode(ctx context.Context, node *cdp.Node, function string, res interface{}, args ...interface{}) error {
 	r, err := dom.ResolveNode().WithNodeID(node.NodeID).Do(ctx)
 	if err != nil {
